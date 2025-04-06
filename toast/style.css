@@ -1,0 +1,43 @@
+.container{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+#toastBtn{
+    background-color: #bd0d0d;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#toastContent{
+    visibility: hidden;
+    position:absolute;
+    top: 0;
+    right: 0;
+    background-color: #ccc;
+    color: #fff;
+    padding: 5px 15px;
+    max-width: 300px;
+    min-width: 150px;
+    text-wrap: wrap;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    /* transition: visibility 2s ease-in 1s; */
+}
+#toastContent p{
+    flex: 9;
+}
+
+#toastContent button{
+    flex:1;
+    height: 30px;
+    text-align: end;
+    background-color: #ccc;
+    border: none;
+    color: #fff;
+    align-self: flex-start;
+    cursor: pointer;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <div class="container" id="cal" >
+      <div class="output" id="output">0</div>
+      <button class="flex-item operator" onclick="onclickBtn">+</button>
+      <button class="flex-item operator">-</button>
+      <button class="flex-item operator">/</button>
+      <button class="flex-item operator">*</button>
+      <button class="flex-item clear">Del</button>
+      <button class="flex-item digit" onclick="onclickBtn">1</button>
+      <button class="flex-item digit">2</button>
+      <button class="flex-item digit">3</button>
+      <button class="flex-item digit">4</button>
+      <button class="flex-item digit">5</button>
+      <button class="flex-item digit">6</button>
+      <button class="flex-item digit">7</button>
+      <button class="flex-item digit">8</button>
+      <button class="flex-item digit">9</button>
+      <button class="flex-item digit">0</button>
+      <button class="flex-item enter" onclick="calc">Enter</button>
+    </div>
+    <script>
+        let output = ''
+        const calConatiner = document.getElementById('cal').childNodes;
+        calConatiner.forEach(element => {
+            if(element.classList){
+                if(element.classList.contains('digit') || element.classList.contains('operator')){
+                    element.addEventListener("click",onclickBtn)
+                }
+                if(element.classList.contains('enter')){
+                  element.addEventListener("click",calc)
+                }
+                if(element.classList.contains('clear')){
+                  element.addEventListener('click',clear)
+                }
+            }
+        });
+        function onclickBtn(e){
+            e.preventDefault();
+            console.log(e)
+            output = output + e.srcElement.innerHTML;
+            let outputEle = document.getElementsByClassName('output');
+            outputEle[0].innerHTML = output;
+        }
+        function calc(e){
+          let outputEle = document.getElementsByClassName('output');
+          output = eval(output)
+          outputEle[0].innerHTML = output;
+        }
+        function clear(e){
+          let outputEle = document.getElementsByClassName('output');
+          output = ''
+          outputEle[0].innerHTML = 0;
+        }
+    </script>
+  </body>
+</html>

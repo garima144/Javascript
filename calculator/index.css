@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    max-width: 500px;
+    border: 2px solid black;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.output{
+    background-color: rgb(187, 200, 200);
+    width: 100%;
+    display: block;
+    min-height: 20px;
+    flex: 100%;
+    text-align: end;
+    padding: 20px;
+}
+
+.digit, .operator, .enter,.clear{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.74);
+    padding: 20px;
+    flex: 20%;
+}
