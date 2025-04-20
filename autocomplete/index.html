@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto complete suggestion</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+      }
+      .container {
+        text-align: center;
+      }
+      input {
+        width: 400px;
+        padding: 10px 20px;
+      }
+      .suggestions {
+        min-width: 400px;
+        border: 1px solid #ccc;
+        max-width: 300px;
+        border-top: none;
+        position: absolute;
+        background: white;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        left: 37%;
+      }
+      .suggestions li {
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+      .suggestions li:hover {
+        background-color: #f0f0f0;
+      }
+      .highlight {
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Hi!, this is a simple autocomplete example, try searching for one of the
+        following fruits :
+      </h1>
+      <p>' "Apple", "Banana", "Cherry", "Date", "Elderberry",
+        "Fig", "Grapes", "Honeydew", "Kiwi", "Pineapple", "Guava", "Peach",
+        "Plum", "Date", "Fig", "Mango", "Papaya", "Jackfruit", "Orange",
+        "Apricot"'</p>
+      <input type="text" id="search" placeholder="Enter a fruit name" />
+      <ul id="suggestions" class="suggestions"></ul>
+    </div>
+    <script src="script.js" />
+  </body>
+</html>
